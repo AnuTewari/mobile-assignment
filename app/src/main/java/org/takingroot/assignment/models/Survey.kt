@@ -23,7 +23,7 @@ data class Survey(
 @Dao
 interface SurveyDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun save(vararg survey: Survey)
+    suspend fun save(survey: Survey)
 
     @Query("select * from surveys")
     suspend fun getAll(): List<Survey>

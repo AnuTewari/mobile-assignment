@@ -1,9 +1,9 @@
 package org.takingroot.assignment.networking
 
 import com.google.gson.GsonBuilder
+import com.google.gson.JsonElement
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import org.takingroot.assignment.models.Survey
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit
 
 interface BaseAPIService {
     @POST("survey/{type}")
-    suspend fun response(@Path("type") type: String, @Body survey: Survey): Response<Void>
+    suspend fun response(@Path("type") type: String, @Body survey: JsonElement): Response<Void>
 
     @GET("survey/user")
     suspend fun getUserSurveys(): Response<APIResponse<UserResponse>>
