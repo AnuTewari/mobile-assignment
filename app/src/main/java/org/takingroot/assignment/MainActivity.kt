@@ -47,7 +47,7 @@ fun Home(viewModel: SurveyViewModel) {
         NavBar("Assignment")
         Box(modifier = Modifier.padding(8.dp)) {
             if (selectedTab == 0) {
-                SurveyList()
+                SurveyList(viewModel)
             } else {
                 ResponseList(viewModel)
             }
